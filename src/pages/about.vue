@@ -4,8 +4,9 @@
 
     <editor v-model="content" api-key="aabqfn9ljep0mz0n9lh13iozog05osdja4p1clrvkda0igg1" :init="{
         height: 500,
-        menubar: true,
-        language: 'zh_CN',
+        menubar: false, // 隐藏菜单栏
+        language: 'zh_CN',// 中文
+        images_upload_url: 'http://127.0.0.1:8000/file/excel_upload/',// 上传图片的地址
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
             'searchreplace visualblocks code fullscreen',
@@ -13,7 +14,7 @@
         ],
         toolbar:
             'undo redo | formatselect | bold italic backcolor | \
-                   alignleft aligncenter alignright alignjustify | \
+                   alignleft aligncenter alignright alignjustify image | \
                    bullist numlist outdent indent | removeformat | help'
     }" />
 
@@ -27,7 +28,7 @@
 
     let content = ref('');
     
-    function clear() {
+    function clear() { 
         alert(content.value);
     }
 
